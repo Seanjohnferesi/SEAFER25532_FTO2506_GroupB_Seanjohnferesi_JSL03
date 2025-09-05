@@ -1,34 +1,26 @@
-//Task 1
-let task1Title = prompt("Enter task 1 title");
-console.log(`Title: ${task1Title}`);
+/*// Ask the user for the title and description of task 1
+const task1Title = prompt("Enter task 1 title");
+const task1Description = prompt("Enter task 1 description");
 
-let task1Description = prompt("Enter task 1 description");
-console.log(`Description: ${task1Description}`);
-
+// Ask for the status of task 1 and convert it to lowercase
 let task1Status = prompt("Enter task 1 status (todo, doing, done)").toLowerCase();
 
-//invalid input for task 1
+// Keep asking until the user enters a valid status for task 1
 while (task1Status !== "todo" && task1Status !== "doing" && task1Status !== "done") {
     alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
     task1Status = prompt("Enter task 1 status (todo, doing, done)").toLowerCase();
 }
 console.log(`Status: ${task1Status}`);
 
-//Task 2
-let task2Title = prompt("Enter task 2 title");
-console.log(`Title: ${task2Title}`);
-
-let task2Description = prompt("Enter task 2 description");
-console.log(`Description: ${task2Description}`);
-
+// Repeating the same steps for Task 2
+const task2Title = prompt("Enter task 2 title");
+const task2Description = prompt("Enter task 2 description");
 let task2Status = prompt("Enter task 2 status").toLowerCase();
 
-//invalid input for Task 2;
 while(task2Status !== "todo" && task2Status !== "doing" && task2Status !== "done") {
     alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
     task2Status = prompt("Enter task 1 status (todo, doing, done)").toLowerCase();
 }
-console.log(`Status: ${task2Status}`);
 
 // Check if task1 is done, and log it if so
 if (task1Status === "done") {
@@ -43,5 +35,45 @@ if (task2Status === "done") {
 // If neither task1 nor task2 is done, show a motivational message
 if (task1Status !== "done" && task2Status !== "done") {
   console.log("No tasks completed, let's get to work!");
+}*/
+
+//Storing tasks as objects inside an array
+const initialTasks = [
+  {
+    id: 1,
+    title: "Launch Epic Career",
+    description: "Create a killer Resume",
+    status: "todo",
+  },
+  {
+    id: 2,
+    title: "Master JavaScript",
+    description: "Get comfortable with the fundamentals",
+    status: "doing",
+  },
+  {
+    id: 3,
+    title: "Contribute to Open Source Projects",
+    description:
+      "Gain practical experience and collaborate with others in the software development community",
+    status: "done",
+  },
+];
+//console.log(initialTasks)
+
+//function to add up to 3 new tasks to the existing array
+function addTask(newTitle, newDescription, newStatus) {
+  let id = initialTasks.length + 1;//Incrementing the ID when task are added.
+
+  let newTask = {
+    id: id,
+    title: newTitle,
+    description: newDescription, 
+    status: newStatus, 
+  }
+
+  initialTasks.push(newTask);
 }
 
+addTask("work", "from home", "todo");
+console.log(initialTasks)
