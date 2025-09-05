@@ -1,4 +1,48 @@
-/*// Ask the user for the title and description of task 1
+//Storing tasks as objects inside an array
+const initialTasks = [
+  {
+    id: 1,
+    title: "Launch Epic Career",
+    description: "Create a killer Resume",
+    status: "todo",
+  },
+  {
+    id: 2,
+    title: "Master JavaScript",
+    description: "Get comfortable with the fundamentals",
+    status: "doing",
+  },
+  {
+    id: 3,
+    title: "Contribute to Open Source Projects",
+    description:
+      "Gain practical experience and collaborate with others in the software development community",
+    status: "done",
+  },
+];
+
+/*function to add up to 3 new tasks to the existing array and stops user from adding
+  more tasks*/
+function addTask(inputTitle, inputDescription, inputStatus) {
+  //Incrementing the ID when task are added.
+  let id = initialTasks.length + 1;
+  let maxTask = 6;
+
+  if (initialTasks.length < maxTask){
+    let newTask = {
+      id: id,
+      title: inputTitle,
+      description: inputDescription, 
+      status: inputStatus, 
+    }
+    initialTasks.push(newTask);
+
+  } else if (initialTasks.length === maxTask){
+    alert("There are enough tasks on your board, please check them in the console");
+  }
+}
+
+// Ask the user for the title and description of task 1
 const task1Title = prompt("Enter task 1 title");
 const task1Description = prompt("Enter task 1 description");
 
@@ -10,7 +54,8 @@ while (task1Status !== "todo" && task1Status !== "doing" && task1Status !== "don
     alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
     task1Status = prompt("Enter task 1 status (todo, doing, done)").toLowerCase();
 }
-console.log(`Status: ${task1Status}`);
+addTask(task1Title, task1Description, task1Status);
+//console.log(`Status: ${task1Status}`);
 
 // Repeating the same steps for Task 2
 const task2Title = prompt("Enter task 2 title");
@@ -35,45 +80,35 @@ if (task2Status === "done") {
 // If neither task1 nor task2 is done, show a motivational message
 if (task1Status !== "done" && task2Status !== "done") {
   console.log("No tasks completed, let's get to work!");
-}*/
+}
+addTask(task2Title, task2Description, task2Status);
 
-//Storing tasks as objects inside an array
-const initialTasks = [
-  {
-    id: 1,
-    title: "Launch Epic Career",
-    description: "Create a killer Resume",
-    status: "todo",
-  },
-  {
-    id: 2,
-    title: "Master JavaScript",
-    description: "Get comfortable with the fundamentals",
-    status: "doing",
-  },
-  {
-    id: 3,
-    title: "Contribute to Open Source Projects",
-    description:
-      "Gain practical experience and collaborate with others in the software development community",
-    status: "done",
-  },
-];
-//console.log(initialTasks)
+console.log(initialTasks);
 
-//function to add up to 3 new tasks to the existing array
-function addTask(newTitle, newDescription, newStatus) {
-  let id = initialTasks.length + 1;//Incrementing the ID when task are added.
+/*//Adding tasks through prompts and storing them inside and object
+for (let i = 1; i <= 1; i++) {
+  let inputTitle = prompt("Enter Task Title");
+  let inputDescription = prompt("Enter Task Description");
+  let inputStatus = prompt("Enter Task Status(todo, doing, done)").toLowerCase();
 
-  let newTask = {
-    id: id,
-    title: newTitle,
-    description: newDescription, 
-    status: newStatus, 
+  //Keep asking for status when user entered invalid status.
+  while(inputStatus !== "todo" && inputStatus !== "doing" && inputStatus !== "done") {
+    alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
+    inputStatus = prompt("Enter task 1 status (todo, doing, done)").toLowerCase();
   }
 
-  initialTasks.push(newTask);
-}
+  let id = initialTasks.length + 1;
 
-addTask("work", "from home", "todo");
-console.log(initialTasks)
+  addTask(inputTitle, inputDescription, inputStatus)
+
+
+  if (inputStatus === "done") {
+    console.log("Title: " + inputTitle + ", status: " + inputStatus);
+  }
+
+  // If neither task1 nor task2 is done, show a motivational message
+  if (inputStatus !== "done") {
+    console.log("No tasks completed, let's get to work!");
+  }
+}
+console.log(initialTasks);*/
