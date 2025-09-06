@@ -24,7 +24,7 @@ const initialTasks = [
 /*function to add up to 3 new tasks to the existing array and stops user from adding
   more tasks*/
 function addTask(inputTitle, inputDescription, inputStatus) {
-  //Incrementing the ID when task are added.
+  //Incrementing the ID by 1 when task are added.
   let id = initialTasks.length + 1;
   let maxTask = 6;
 
@@ -41,6 +41,7 @@ function addTask(inputTitle, inputDescription, inputStatus) {
     alert("There are enough tasks on your board, please check them in the console");
   }
 }
+ addTask("inputTitl", "inputDescription", "done")
 
 // Ask the user for the title and description of task 1
 const task1Title = prompt("Enter task 1 title");
@@ -60,14 +61,27 @@ addTask(task1Title, task1Description, task1Status);
 // Repeating the same steps for Task 2
 const task2Title = prompt("Enter task 2 title");
 const task2Description = prompt("Enter task 2 description");
-let task2Status = prompt("Enter task 2 status").toLowerCase();
+let task2Status = prompt("Enter task 2 status (todo, doing, done)").toLowerCase();
 
 while(task2Status !== "todo" && task2Status !== "doing" && task2Status !== "done") {
     alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
     task2Status = prompt("Enter task 1 status (todo, doing, done)").toLowerCase();
 }
 
-// Check if task1 is done, and log it if so
+addTask(task2Title, task2Description, task2Status);
+
+console.log(initialTasks);
+
+//a function that filter tasks that are done and log them in the console.
+function completedTask() {
+  const doneTask = initialTasks.filter((done) => done.status === "done");
+  console.log("Completed Task:")
+  console.log(doneTask);
+}
+console.log(completedTask());
+
+
+/*// Check if task1 is done, and log it if so
 if (task1Status === "done") {
   console.log("Title: " + task1Title + ", status: " + task1Status);
 }
@@ -80,13 +94,10 @@ if (task2Status === "done") {
 // If neither task1 nor task2 is done, show a motivational message
 if (task1Status !== "done" && task2Status !== "done") {
   console.log("No tasks completed, let's get to work!");
-}
-addTask(task2Title, task2Description, task2Status);
-
-console.log(initialTasks);
+}*/
 
 /*//Adding tasks through prompts and storing them inside and object
-for (let i = 1; i <= 1; i++) {
+for (let i = 1; i <= 3; i++) {
   let inputTitle = prompt("Enter Task Title");
   let inputDescription = prompt("Enter Task Description");
   let inputStatus = prompt("Enter Task Status(todo, doing, done)").toLowerCase();
