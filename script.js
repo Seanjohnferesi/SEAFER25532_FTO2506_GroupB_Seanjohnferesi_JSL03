@@ -70,7 +70,12 @@ while(task2Status !== "todo" && task2Status !== "doing" && task2Status !== "done
 
 addTask(task2Title, task2Description, task2Status);
 
-console.log(initialTasks);
+// a function that logs all tasks with a label on top.
+function showAllTasks () {
+  console.log("All Tasks:");
+  console.log(initialTasks);
+}
+showAllTasks()
 
 //a function that filter tasks that are done and log them in the console.
 function completedTask() {
@@ -79,6 +84,7 @@ function completedTask() {
   console.log(doneTask);
 }
 console.log(completedTask());
+
 
 
 /*// Check if task1 is done, and log it if so
