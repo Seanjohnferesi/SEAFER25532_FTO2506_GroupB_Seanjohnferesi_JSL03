@@ -76,7 +76,7 @@ addTask(task2Title, task2Description, task2Status);
 
 // a function that logs all tasks with a label on top.
 function showAllTasks () {
-  console.log("All Tasks:");
+  console.group("All Tasks:");
   console.log(initialTasks);
 }
 showAllTasks()
@@ -84,12 +84,10 @@ showAllTasks()
 //a function that filter tasks that are done and log them in the console.
 function completedTask() {
   const doneTask = initialTasks.filter((done) => done.status === "done");
-  console.log("Completed Task:")
+  console.group("Completed Task:")
   console.log(doneTask);
 }
 console.log(completedTask());
-
-
 
 /*// Check if task1 is done, and log it if so
 if (task1Status === "done") {
@@ -99,12 +97,12 @@ if (task1Status === "done") {
 // Check if task2 is done, and log it if so
 if (task2Status === "done") {
   console.log("Title: " + task2Title + ", status: " + task2Status);
-}
+}*/
 
 // If neither task1 nor task2 is done, show a motivational message
 if (task1Status !== "done" && task2Status !== "done") {
   console.log("No tasks completed, let's get to work!");
-}*/
+}
 
 /*//Adding tasks through prompts and storing them inside and object
 for (let i = 1; i <= 3; i++) {
