@@ -36,10 +36,14 @@ function addTask(inputTitle, inputDescription, inputStatus) {
       status: inputStatus, 
     }
     initialTasks.push(newTask);
+    console.log(initialTasks);
 
-  } else if (initialTasks.length === maxTask){
-    alert("There are enough tasks on your board, please check them in the console");
+    // Check if this is the last allowed task and alert the user
+    if (initialTasks.length === maxTask){
+      alert("There are enough tasks on your board, please check them in the console");
+    }
   }
+
 }
  addTask("inputTitl", "inputDescription", "done")
 
