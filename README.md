@@ -32,7 +32,7 @@ The application features multiple task columns, styled task cards, and a static 
 
 ## 2. JavaScript Task Entry System
 
-A JavaScript-based system that allows users to input two tasks with full details while ensuring data validation and consistency.
+A JavaScript-based system that allows users to input three tasks with full details while ensuring data validation and consistency.
 
 ### Features
 - Prompt users to enter **title**, **description**, and **status** for two tasks
@@ -41,6 +41,8 @@ A JavaScript-based system that allows users to input two tasks with full details
 - Displays **completed tasks** (status: `done`) in the console
 - Shows a motivational message if no tasks are completed:  
   `"No tasks completed, let's get to work!"`  
+- Assigns **unique incremental IDs** to each task
+- Alerts users when the **last allowed task** is added
 
 ---
 
@@ -60,6 +62,8 @@ A JavaScript-based system that allows users to input two tasks with full details
 ### Mobile View
 ![Mobile Preview](./assets/mobile.png)
 
+---
+
 ## 📷 Javascript task entry system preview  
 
 ### User Input View  
@@ -71,3 +75,8 @@ A JavaScript-based system that allows users to input two tasks with full details
 ### Console Log Output  
 ![Console Log Output](./assets/output.png)
 
+### Task Limit Alert
+![Task Limit Alert](./assets/limit-message.png)  
+
+### console array output
+![Console Array Output](./assets/Screenshot%202025-09-07%20165407.png)
